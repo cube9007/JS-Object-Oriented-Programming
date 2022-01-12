@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>06_3강 constructor 만들기</title>
+        <style type='text/css'>
+            @import url('../css.css');
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1> 06_3강 constructor 만들기 </h1>
+        </div>
+        <div class="box">
+            <h3 class="stitle"> constructor function </h3>
+            <pre>
+객체를 찍어내는 공장의 역할을 함
+function name(parameter) {
+    내용
+}
+            </pre>
+            <h3 class="stitle"> 생성자 new </h3>
+            <pre>
+객체를 그냥 쓰면 객체이지만
+객체 앞에다 new를 붙이면 생성자가 됨
+            </pre>
+            <script>
+                function Person(name, first, second, third) {
+                    this.name = name;
+                    this.first = first;
+                    this.second = second;
+                    this.third = third ;
+                    this.sum = function() {
+                        return this.first + this.second + this.third;
+                    }
+                }
+                var wonho = new Person('choiwonho', 10, 20, 30);
+                var yuri = new Person('kimyuri', 10, 30, 50);
+                var daegeun = new Person('jangdaegeun', 20, 10, 30);
+                document.write(wonho.sum()+'<br>');
+                document.write(yuri.sum()+'<br>');
+                document.write(daegeun.sum()+'<br>');
+            </script>
+            <div class="example">
+                <xmp>
+function Person(name, first, second, third) {
+    this.name = name;
+    this.first = first;
+    this.second = second;
+    this.third = third ;
+    this.sum = function() {
+        return this.first + this.second + this.third;
+    }
+}
+var wonho = new Person('choiwonho', 10, 20, 30);
+var yuri = new Person('kimyuri', 10, 30, 50);
+var daegeun = new Person('jangdaegeun', 20, 10, 30);
+document.write(wonho.sum()+'<br>');
+document.write(yuri.sum()+'<br>');
+document.write(daegeun.sum()+'<br>');
+                </xmp>
+            </div>
+        </div>
+    </body>
+</html>

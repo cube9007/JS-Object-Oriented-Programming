@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>06_2강 constructor의 사례</title>
+        <style type='text/css'>
+            @import url('../css.css');
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1> 06_2강 constructor의 사례 </h1>
+        </div>
+        <div class="box">
+            <h3 class="stitle"> 공장 만들기의 예시 new Date </h3>
+            <pre>
+Date라는 걸 통해서 객체를 구축해보겠음
+            </pre>
+            <script>
+                var d1 = new Date('2022-01-12');
+                document.write( d1.getFullYear() + '-' + d1.getMonth() + '-' + d1.getDate() );
+            </script>
+            <div class="example">
+                <xmp>
+var d1 = new Date('2022-01-12');
+document.write( d1.getFullYear() + '-' + d1.getMonth() + '-' + d1.getDate() );
+                </xmp>
+            </div>
+            <pre>
+Date라는 이 무언가는 앞에 new를 붙였을 때 객체를 만들어서 우리에게 리턴해줌
+
+다른 객체도 이런식으로 공장을 통해서 만든다면 
+- 코드가 깨끗해짐
+- 모든 객체가 자동화됨
+
+            </pre>
+        </div>
+    </body>
+</html>
