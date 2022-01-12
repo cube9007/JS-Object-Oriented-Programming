@@ -12,9 +12,51 @@
             <h1> 03_2강 객체와 반복문 </h1>
         </div>
         <div class="box">
-            <h3 class="stitle"> 가벼운 몸풀기 익숙한 배열 ^^</h3>
-            <p> 배열로 몸풀기</p>
-            
+            <h3 class="stitle"> 가벼운 몸풀기 반복문과 배열 ^^</h3>
+            <script>
+                var baeyeol = ['wonho', 'yuri', 'taegook'];
+                var i = 0;
+                while( i < baeyeol.length ) {
+                    document.write( baeyeol[i] + '<br>');
+                    i = i + 1;
+                }
+            </script>     
+            <div class="example">
+                <xmp>
+var baeyeol = ['wonho', 'yuri', 'taegook'];
+var i = 0;
+while( i < baeyeol.length ) {
+    document.write( baeyeol[i] + '<br>');
+    i = i + 1;
+}
+                </xmp>
+            </div>       
+
+        </div>
+        <div class="box">
+            <h3 class="stitle"> 객체와 반복문 </h3>
+            <script>
+                var gaekchae = {
+                    designer : 'wonho',
+                    planner : 'yuri',
+                    jjang : 'taegook',
+                }
+                for(var key in gaekchae) {
+                    document.write(key+ ' : ' + gaekchae[key] + '<br>')
+                }
+            </script>
+            <div class="example">
+                <xmp>
+var gaekchae = {
+    designer : 'wonho',
+    planner : 'yuri',
+    jjang : 'taegook',
+}
+for(var key in gaekchae) {
+    document.write(key+ ' : ' + gaekchae[key] + '<br>')
+}
+                </xmp>
+            </div>
         </div>
     </body>
 </html>

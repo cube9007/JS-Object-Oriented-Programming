@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>04_2강 객체 만들어보기</title>
+        <style type='text/css'>
+            @import url('../css.css');
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1> 04_2강 객체 만들어보기 </h1>
+        </div>
+        <div class="box">
+            <h3 class="stitle"> 객체 만들어보기</h3>
+            <pre>
+MyMath라는 객체를 만들어 보기 
+            </pre>
+            <script>
+                var MyMath = {
+                    PI : Math.PI ,
+                    random : function() {
+                        return Math.floor(Math.random() * 10);
+                    },  
+                    floor : function(value) {
+                        return Math.floor(value);
+                    }
+                }
+                document.write( MyMath.PI + '<br>');
+                document.write( MyMath.random() + '<br>');
+                document.write( MyMath.floor(Math.random() * 100) + '<br>');
+            </script>
+            <div class="example">
+                <xmp>
+var MyMath = {
+    PI : Math.PI ,
+    random : function() {
+        return Math.floor(Math.random() * 10);
+    },  
+    floor : function(value) {
+        return Math.floor(value);
+    }
+}
+document.write( MyMath.PI + '<br>');
+document.write( MyMath.random() + '<br>');
+document.write( MyMath.floor(Math.random() * 100) + '<br>');
+                </xmp>
+            </div>
+            <pre>
+객체라는 수납상자에 Math와 관련된 변수, 함수들을 넣어놓음 
+            </pre>
+        </div>
+    </body>
+</html>
