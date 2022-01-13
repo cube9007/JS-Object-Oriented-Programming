@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>07강 prototype</title>
+        <style type='text/css'>
+            @import url('../css.css');
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1> 07_1강 prototype이 필요한 이유 </h1>
+        </div>
+        <div class="box">
+            <h3 class="stitle"> prototype 원형 </h3>
+            <pre>
+자바스크립트 중고급을 넘어갈 때 쓰는 개념
+자바스크립트를 prototype based language라고도 부름 (프로토타입 기반 언어)
+            </pre>
+        </div>
+        <div class="box">
+            <h3 class="stitle"> 예시 </h3>
+            <script>
+                function Person(name, first, second, third) {
+                    this.name = name;
+                    this.first = first;
+                    this.second = second;
+                    this.third = third ;
+                    this.sum = function() {
+                        return this.first + this.second + this.third;
+                    }
+                }
+                
+                var wonho = new Person('choiwonho', 10, 20, 30);
+                var yuri = new Person('kimyuri', 10, 30, 50);
+                var daegeun = new Person('jangdaegeun', 20, 10, 30);
+                document.write(wonho.sum()+'<br>');
+                document.write(yuri.sum()+'<br>');
+                document.write(daegeun.sum()+'<br>');
+            </script>
+            <div class="example">
+                <xmp>
+function Person(name, first, second, third) {
+    this.name = name;
+    this.first = first;
+    this.second = second;
+    this.third = third ;
+    this.sum = function() {
+        return this.first + this.second + this.third;
+    }
+}
+var wonho = new Person('choiwonho', 10, 20, 30);
+var yuri = new Person('kimyuri', 10, 30, 50);
+var daegeun = new Person('jangdaegeun', 20, 10, 30);
+document.write(wonho.sum()+'<br>');
+document.write(yuri.sum()+'<br>');
+document.write(daegeun.sum()+'<br>');
+                </xmp>
+            </div>
+            <pre>
+this.sum = function() {
+    return this.first + this.second + this.third;
+}
+이 부분이 불필요하게 반복됨
+따로 빼서 반복 안되게 만들고 싶음 
+저 Person이라는 객체에서 한 번 만들어놓으면 계속 쓸 수 있는 속성?을 만들면 좋겠음
+= 그게 prototype
+            </pre>
+
+            
+        </div>
+        <div class="title">
+            <h1> 07_2강 prototype을 이용해서 재사용성을 높이기 </h1>
+        </div>
+        <div class="box">
+            <h3 class="stitle"> 변경된 예시</h3>
+            <script>
+                function Person(name, first, second, third) {
+                    this.name = name;
+                    this.first = first;
+                    this.second = second;
+                    this.third = third ;
+                }
+                
+                Person.prototype.sum = function() {
+                        return this.first + this.second + this.third;
+                    }
+
+                var wonho = new Person('choiwonho', 10, 20, 30);
+                var yuri = new Person('kimyuri', 10, 30, 50);
+                var daegeun = new Person('jangdaegeun', 20, 10, 30);
+                document.write(wonho.sum()+'<br>');
+                document.write(yuri.sum()+'<br>');
+                document.write(daegeun.sum()+'<br>');
+            </script>
+            <div class="example">
+                <xmp>
+function Person(name, first, second, third) {
+    this.name = name;
+    this.first = first;
+    this.second = second;
+    this.third = third ;
+}
+
+Person.prototype.sum = function() {
+        return this.first + this.second + this.third;
+    }
+
+var wonho = new Person('choiwonho', 10, 20, 30);
+var yuri = new Person('kimyuri', 10, 30, 50);
+var daegeun = new Person('jangdaegeun', 20, 10, 30);
+document.write(wonho.sum()+'<br>');
+document.write(yuri.sum()+'<br>');
+document.write(daegeun.sum()+'<br>');
+                </xmp>
+            </div>
+            <pre>
+Person.prototype.sum = function() {
+    return this.first + this.second + this.third;
+}
+이 부분을 따로 빼서 정의함 - 객체에서 속성으로 쓸 수 있게 만듬 
+= 불필요한 반복 데이터가 사라짐 
+            </pre>
+        </div>
+    </body>
+</html>

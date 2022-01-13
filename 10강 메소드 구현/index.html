@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>10강 메소드 구현</title>
+        <style type='text/css'>
+            @import url('../css.css');
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1> 10강 메소드 구현 </h1>
+        </div>
+        <div class="box">
+            <h3 class="stitle"> 코드 예시 </h3>
+            <script>
+                class Person {
+                    constructor(name, first, second) {
+                        this.name = name;
+                        this.first = first;
+                        this.second = second;
+                    }
+                }
+                var kim = new Person('kim', 10, 20);
+                document.write('kim.name : ' + kim.name + '<br>');
+                document.write('kim.first : ' + kim.first + '<br>');
+                document.write('kim.second : ' + kim.second + '<br>');
+            </script>
+            
+        </div>
+    </body>
+</html>
